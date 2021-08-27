@@ -3,4 +3,5 @@
 information <br>- Team members' roles and responsibilities <br>- Project
 Vision <br>- Time and Tasks Management <br>- Policies which all the
 members should follow <br>- Definition of DONE <br><b> Analysis of
-Alternatives </b> <br><b> Risk Register </b>
+Alternatives </b> <br><b> Risk Register </b><br><b>snapshot of all up-to-date project artifacts</b>
+
