@@ -3,4 +3,7 @@
 information <br>- Team members' roles and responsibilities <br>- Project
 Vision <br>- Time and Tasks Management <br>- Policies which all the
 members should follow <br>- Definition of DONE <br><b> Analysis of
-Alternatives </b> <br><b> Risk Register </b>
+Alternatives </b> <br><b> Risk Register </b><br><b>Snapshot of all up-to-date project artifacts</b>
+
+Google Drive Link: https://drive.google.com/drive/u/1/folders/0AJN5q1Dk_OfKUk9PVA
+
