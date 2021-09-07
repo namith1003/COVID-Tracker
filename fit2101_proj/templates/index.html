@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        {% if user.is_authenticated %}
+        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
+        {% else %}
+        <li><a class="getstarted scrollto" href="login">Login or Sign up</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+    <div>
+        <!--Dont touch here-->
+        <div>
+            {% if user.is_authenticated %}
+            <h1>Welcome {{user.username}}</h1>
+            {% else %}
+            <h1>Welcome</h1>
+            {% endif %}
+            <h2>This is our app</h2>
+        </div>
+    </div>
+</body>
+
+</html>
