@@ -63,3 +63,6 @@ def counter(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
+
+def signup(request):
+    return render(request, "signup.html", {})
