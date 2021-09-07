@@ -10,11 +10,13 @@
 
 <body>
     <nav>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        <a href="{% url 'admin:logout' %}">logout</a><br>
+        {% elif user.is_authenticated %}
         <li><a class="getstarted scrollto" href="logout">Logout</a></li>
         {% else %}
-        <li><a class="getstarted scrollto" href="login">Login</a></li>
+        <li><a class="nav-link scrollto" href="/admin">Admin Log In</a></li>
+        <li><a class="getstarted scrollto" href="User login">Login</a></li>
         {% endif %}
         </ul>
     </nav>
@@ -22,7 +24,11 @@
         <!--Dont touch here-->
         <div>
             {% if user.is_authenticated %}
-            <h1>Welcome {{user.username}}</h1>
+                {% if user.is_superuser %}
+                    <h1>Welcome Admin {{user.username}}</h1>
+                {% else %}
+                     <h1>Welcome {{user.username}}</h1>
+                {% endif %}
             {% else %}
             <h1>Welcome</h1>
             {% endif %}
