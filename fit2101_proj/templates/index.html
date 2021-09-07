@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +15,7 @@
         <li><a class="getstarted scrollto" href="logout">Logout</a></li>
         {% else %}
         <li><a class="nav-link scrollto" href="/admin">Admin Log In</a></li>
-        <li><a class="getstarted scrollto" href="User login">Login</a></li>
+        <li><a class="getstarted scrollto" href="login">Login</a></li>
         {% endif %}
         </ul>
     </nav>
@@ -26,13 +25,15 @@
             {% if user.is_authenticated %}
                 {% if user.is_superuser %}
                     <h1>Welcome Admin {{user.username}}</h1>
+                    <h2>You are logged into an admin account</h2>
                 {% else %}
                      <h1>Welcome {{user.username}}</h1>
+                     <h2>You are a user. Your email is {{user.email}}</h2>
                 {% endif %}
             {% else %}
             <h1>Welcome</h1>
+            <p>Have you considered signing in</p>
             {% endif %}
-            <h2>This is our app</h2>
         </div>
     </div>
 </body>
