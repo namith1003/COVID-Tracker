@@ -68,4 +68,4 @@ def signup(request):
     return render(request, "signup.html", {})
 
 def forgotpassword(request):
-    return render(request, 'forgotpassword.html', {})
+    return render(request, "forgotpassword.html", {})    
