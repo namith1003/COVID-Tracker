@@ -63,7 +63,7 @@ body {
 }
 .signup-form .btn:hover, .signup-form .btn:focus {
     /* background: #179b81; */
-    background: cadetblue;
+    background: rgb(20, 99, 102);
 }
 .signup-form a {
     /* color: #19aa8d; */

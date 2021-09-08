@@ -25,7 +25,8 @@ body {
 }
 
 .container h3{
-    color: cadetblue;
+    /* color: cadetblue; */
+    color: gray;
 }
 
 .form-group{
