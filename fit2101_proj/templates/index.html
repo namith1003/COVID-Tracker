@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
+{% csrf_token %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>fit2101_Project-Home</title>
 </head>
 
 <body>
     <nav>
         {% if user.is_superuser %}
-        <a href="{% url 'admin:logout' %}">logout</a><br>
+        <li><a class="nav-link scrollto" href="/admin">View Admin controls</a></li>
+        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
         {% elif user.is_authenticated %}
         <li><a class="getstarted scrollto" href="logout">Logout</a></li>
         {% else %}
-        <li><a class="nav-link scrollto" href="/admin">Admin Log In</a></li>
         <li><a class="getstarted scrollto" href="login">Login</a></li>
         {% endif %}
         </ul>
@@ -35,6 +37,13 @@
             <p>Have you considered signing in</p>
             {% endif %}
         </div>
+    </div>
+    <br>
+    <div>
+        <h1>{{user.profile.tel }}</h1>
+    </div>
+    <div class="widget">
+        <h3><a href="add_widget">Add Widget</a> coming soon</h3>
     </div>
 </body>
 

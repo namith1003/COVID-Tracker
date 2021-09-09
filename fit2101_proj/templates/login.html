@@ -6,20 +6,20 @@
     }
 </style>
 
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor %}
-
-
-
-<form method="POST" action="login">
-    {% csrf_token %}
-<p>Username</p>
-<input type="text" name="username">
-<p>Password:</p>
-<input type="password" name="password"><br>
-<input type="submit">
-<br>
-<a href="/signup">sign up</a>
-
-</form>
+<body>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Username</p>
+            <input type="text" name="username">
+            <p>Password:</p>
+            <input type="password" name="password"><br>
+            <input type="submit">
+            <br>
+            <a href="/register">sign up</a>
+        </form>
+    </div>
+</body>
