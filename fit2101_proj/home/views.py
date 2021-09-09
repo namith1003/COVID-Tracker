@@ -69,5 +69,13 @@ def counter(request):
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
 
+<<<<<<< HEAD
 def add_widget(request):
     pass
+=======
+def signup(request):
+    return render(request, "signup.html", {})
+
+def forgotpassword(request):
+    return render(request, "forgotpassword.html", {})    
+>>>>>>> 3b72833707a677eeabf54d3a4c40c857aa8a9b47
