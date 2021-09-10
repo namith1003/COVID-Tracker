@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-from django.http import request
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User, auth
-from django.contrib import messages
-from .models import Profile
-from home import  urls
-from django.urls import reverse
-#from django.http import HttpResponse
-=======
 # from django.http import request
 # from django.shortcuts import render, redirect
 # from django.contrib.auth.models import User, auth
@@ -16,7 +6,6 @@ from django.urls import reverse
 from home import  urls
 from django.urls import reverse
 from django.http import HttpResponse
->>>>>>> e7841e172f44f0d9f467720067ffe8672f97ae68
 
 
 # Create your views here.
@@ -80,10 +69,6 @@ def counter(request):
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
 
-<<<<<<< HEAD
-def add_widget(request):
-    pass
-=======
 def signup(request):
     return render(request, "signup.html", {})
 
@@ -163,4 +148,3 @@ def forgotpassword(request):
 
 # def add_widget(request):
 #     pass
->>>>>>> e7841e172f44f0d9f467720067ffe8672f97ae68

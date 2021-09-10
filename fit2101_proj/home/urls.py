@@ -5,15 +5,6 @@ urlpatterns = [
     # when it is empty means it is root url
     path('', views.index, name='index'),
     # when it is empty means it is root url
-<<<<<<< HEAD
-    path('counter/', views.counter, name='counter'),
-    path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout'),
-    path('post/<str:pk>/', views.post, name='post'),
-    path('add_widget/', views.add_widget, name="add_widget"),
-]
-=======
     path('counter', views.counter, name='counter'),
     path('register', views.register, name='register'),
     path('login', views.login, name='login'),
@@ -35,4 +26,3 @@ urlpatterns = [
 #     path('post/<str:pk>/', views.post, name='post'),
 #     path('add_widget/', views.add_widget, name="add_widget"),
 # ]
->>>>>>> e7841e172f44f0d9f467720067ffe8672f97ae68
