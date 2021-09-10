@@ -12,7 +12,9 @@
         <h3>{{message}}</h3>
         {% endfor %}
         <form method="POST" action="">
-            {% csrf_token %}
+           
+            
+
             <p>Username</p>
             <input type="text" name="username">
             <p>Password:</p>
@@ -34,7 +36,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
+{% csrf_token %}
 {% for message in messages %}
 <h3>{{message}}</h3>
 {% endfor %}
@@ -46,7 +48,6 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" method="POST">
-                            {% csrf_token %}
                             <h3 class="text-center text-info" ,style="color:cadetblue">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>

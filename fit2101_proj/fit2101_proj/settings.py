@@ -147,7 +147,7 @@ EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'xinquanyip@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'fit2101demo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Fit2101#demo_#'
 #password:Fit2101#demo_#
 #username: fit2101demo@gmail.com
