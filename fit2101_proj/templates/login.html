@@ -1,3 +1,28 @@
+<!-- < <h1>Login now</h1>
+
+<style>
+    h3 {
+        color: red
+    }
+</style>
+
+<body>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Username</p>
+            <input type="text" name="username">
+            <p>Password:</p>
+            <input type="password" name="password"><br>
+            <input type="submit">
+            <br>
+            <a href="/register">sign up</a>
+        </form>
+    </div>
+</body>  -->
 <html>
     <head>  
         <meta charset="UTF-8">  
@@ -19,17 +44,14 @@
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
-                            <form id="login-form" class="form" action="login" method="POST">
+                            <form id="login-form" class="form" method="POST">
                             {% csrf_token %}
                                 <h3 class="text-center text-info",style="color:cadetblue">Login</h3>
                                 <div class="form-group">
-                                    <label for="email" class="text-info">Email:</label><br>
-                                    <input type="text" name="email" id="email" class="form-control">
+                                    <label for="username" class="text-info">Username:</label><br>
+                                    <input type="text" name="username"  class="form-control">
                                 </div>
-                                <div class="form-group">
-                                    <label for="phoneNumber" class="text-info">Phone Number:</label><br>
-                                    <input type="text" name="phoneNumber" id="phoneNumber" class="form-control">
-                                </div>
+                             
                                 <div class="form-group">
                                     <label for="password" class="text-info">Password:</label><br>
                                     <input type="password" name="password" id="password" class="form-control">
@@ -38,19 +60,15 @@
                                 <a href="/forgotpassword" class="text-info">Forgot Password?</a>
                                 </div>
                                 <div class="form-group">
-                                    {% comment %} <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> {% endcomment %}
                                     <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                                 </div>
                                
                                 <br><br>
                                 <div id="register-link" class="text-right">
-                                    <a href="/signup" class="text-info">Register here</a>
+                                    <a href="/register" class="text-info">Register here</a>
                                 </div>
                                 </div>
-                                {% comment %} <div id="forgotpassword" class="text-left">
-          
-                                  <a href="/forgotpassword" class="pull-left">Forgot Password?</a>
-                                </div> {% endcomment %}
+                              
                             </form> 
                         </div>
                     </div>
