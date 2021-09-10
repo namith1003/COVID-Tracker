@@ -149,5 +149,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'fit2101demo@gmail.com'
 EMAIL_HOST_PASSWORD = 'Fit2101#demo_#'
+
+#DATABASE
+
+#EMAIL
 #password:Fit2101#demo_#
 #username: fit2101demo@gmail.com
+
+#USERS
