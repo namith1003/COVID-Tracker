@@ -148,6 +148,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'xinquanyip@gmail.com'
-EMAIL_HOST_PASSWORD = 'ragemode101'
+EMAIL_HOST_PASSWORD = ''
 #password:Fit2101#demo_#
 #username: fit2101demo@gmail.com
