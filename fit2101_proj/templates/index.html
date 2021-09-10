@@ -1,53 +1,61 @@
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        {% load static %}
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>  
 
-<!DOCTYPE html>
-{% csrf_token %}
-<html lang="en">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fit2101_Project-Home</title>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
     
-    {% load static %}
-    <link href="{% static 'css/bootstrap.min.css' %}" >  
-    <script src="{% static 'bootstrap.min.js' %}"></script>  
-</head>
-
-<body>
-    <nav>
-        {% if user.is_superuser %}
-        <li><a class="nav-link scrollto" href="/admin">View Admin controls</a></li>
-        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
-        {% elif user.is_authenticated %}
-        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
-        {% else %}
-        <li><a class="getstarted scrollto" href="login">Login</a></li>
-        {% endif %}
-        </ul>
-    </nav>
-    <div>
-        <!--Dont touch here-->
-        <div>
-            {% if user.is_authenticated %}
-                {% if user.is_superuser %}
-                    <h1>Welcome Admin {{user.username}}</h1>
-                    <h2>You are logged into an admin account</h2>
-                {% else %}
-                     <h1>Welcome {{user.username}}</h1>
-                     <h2>You are a user. Your email is {{user.email}}</h2>
-                {% endif %}
-            {% else %}
-            <h1>Welcome</h1>
-            <p>Have you considered signing in</p>
-            {% endif %}
+    <body>
+        <div id="login">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form id="login-form" class="form" action="login" method="POST">
+                            {% csrf_token %}
+                                <h3 class="text-center text-info",style="color:cadetblue">Login</h3>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">Email:</label><br>
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber" class="text-info">Phone Number:</label><br>
+                                    <input type="text" name="phoneNumber" id="phoneNumber" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Password:</label><br>
+                                    <input type="password" name="password" id="password" class="form-control">
+                                </div>
+                                 <div class="form-group">
+                                <a href="/forgotpassword" class="text-info">Forgot Password?</a>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                </div>
+                               
+                                <br><br>
+                                <div id="register-link" class="text-right">
+                                    <a href="/signup" class="text-info">Register here</a>
+                                </div>
+                                </div>
+                                {% comment %} <div id="forgotpassword" class="text-left">
+          
+                                  <a href="/forgotpassword" class="pull-left">Forgot Password?</a>
+                                </div> {% endcomment %}
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <br>
-    <div>
-        <h1>{{user.profile.tel }}</h1>
-    </div>
-    <div class="widget">
-        <h3><a href="add_widget">Add Widget</a> coming soon</h3>
-    </div>
-</body>
+    </body>
 
 </html>
