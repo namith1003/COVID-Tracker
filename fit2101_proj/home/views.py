@@ -85,5 +85,5 @@ def add_widget(request):
 def forget_password(request):
         return render(request, 'forgotpassword.html')
 
-def password_reset_request(request):
-    return render(request, 'registrations/reset_password.html', context={})
+# def password_reset_request(request):
+#     return render(request, 'registrations/reset_password.html', context={})
