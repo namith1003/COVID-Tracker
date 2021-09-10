@@ -53,6 +53,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             print('hi')
+            get_info(request)
             return redirect('/')
         else:
             messages.info(request, 'Credentials are invalid')
@@ -85,5 +86,10 @@ def add_widget(request):
 def forget_password(request):
         return render(request, 'forgotpassword.html')
 
+def get_info(request):
+
+
+
+
 # def password_reset_request(request):
-#     return render(request, 'registrations/reset_password.html', context={})
+#     return render(request, 'registrations/reset_password.html', context={}
