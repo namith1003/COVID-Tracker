@@ -14,6 +14,6 @@ urlpatterns = [
     path('post/<str:pk>/', views.post, name='post'),
     path('add_widget/', views.add_widget, name="add_widget"),
     path('forget_password/', views.forget_password, name="forget_password"),
-    path('reset_password1/', views.password_reset_request, name="reset_password1"),
+    path('reset_password/', views.password_reset_request, name="reset_password"),
     
 ]
