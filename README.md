@@ -8,9 +8,9 @@
 </ol>
 
 <h2>Google Drive link</h2>
-<a href="https://drive.google.com/drive/u/7/folders/0AJN5q1Dk_OfKUk9PVA"></a>
+<a href="https://drive.google.com/drive/u/7/folders/0AJN5q1Dk_OfKUk9PVA">GDrive</a>
 <h2>Trello link</h2>
-<a href="https://trello.com/b/npeHgzLt/group-a1"></a>
+<a href="https://trello.com/b/npeHgzLt/group-a1">Trello</a>
 <h1>Sprint 1 Deliverables</h>
 <p>
 <ol>
