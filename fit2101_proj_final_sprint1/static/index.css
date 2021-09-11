@@ -1,0 +1,25 @@
+.gradient{
+    background: rgb(215,237,225);
+    background: linear-gradient(29deg, rgba(215,237,225,1) 64%, rgba(1,72,114,1) 100%);
+  }
+  
+  
+  
+  html{
+    background-color: teal;
+  }
+  .page-header{
+    margin-top: 8rem;
+  
+  }
+  
+  h1{
+    font-size: 4rem;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  h2{
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Pacifico', cursive;
+  }
+  
