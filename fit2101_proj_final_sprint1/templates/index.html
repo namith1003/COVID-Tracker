@@ -1,51 +1,4 @@
-<!-- 
 <!DOCTYPE html>
-{% csrf_token %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fit2101_Project-Home</title>
-</head>
-
-<body>
-    <nav>
-        {% if user.is_superuser %}
-        <li><a class="nav-link scrollto" href="/admin">View Admin controls</a></li>
-        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
-        {% elif user.is_authenticated %}
-        <li><a class="getstarted scrollto" href="logout">Logout</a></li>
-        {% else %}
-        <li><a class="getstarted scrollto" href="register">Login</a></li>
-        {% endif %}
-        </ul>
-    </nav>
-    <div>
-        <div>
-            {% if user.is_authenticated %}
-                {% if user.is_superuser %}
-                    <h1>Welcome Admin {{user.username}}</h1>
-                    <h2>You are logged into an admin account</h2>
-                {% else %}
-                     <h1>Welcome {{user.username}}</h1>
-                     
-                {% endif %}
-            {% else %}
-            <h1>Welcome</h1>
-            <p>Have you considered signing in</p>
-            {% endif %}
-        </div>
-    </div>
-    <br>
-   
-    <div class="widget">
-        <h3><a href="add_widget">Add Widget</a> coming soon</h3>
-    </div>
-</body>
-
-</html> -->
-
 <html lang="en">
     <head>
         {% load static %}
@@ -54,6 +7,7 @@
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
         <link href="{% static 'js/bootstrap.min.js' %}" rel="stylesheet">
+        <link href="{% static 'css/password_reset.css' %}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
