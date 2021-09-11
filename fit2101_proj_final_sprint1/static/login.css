@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #999;
+    background: cadetblue;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+h3{
+    font-size:45px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Luckiest Guy', cursive;  
+}
+
+p{
+    color: red;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 200px;
+    max-width: 600px;
+    height: 420px;
+    border: 8px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+   
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+.container h3{
+    color: cadetblue;
+    color: black;
+}
+
+.form-group{
+    color: black;
+
+}
+
+.form-group .btn:hover, .form-group .btn:focus {
+    /* background: #179b81; */
+    background: cadetblue;
+}
+

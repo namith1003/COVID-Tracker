@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    height: 100vh;
+    background: cadetblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+#register-form{
+    border: 10px black;
+}
+
+#reset .container #reset-row #reset-column #login-box {
+    margin-top: 200px;
+    width: 50vh;
+    border: 5px solid gray;
+    background-color: #EAEAEA;
+}
+
+h3{
+    font-size:40px;
+}
+
+h2{
+    font-size:30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Luckiest Guy', cursive;  
+}
+
+p{
+    color: red;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
