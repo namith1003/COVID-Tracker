@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.models import User
 from django.test import TestCase
@@ -190,7 +192,11 @@ class ProfileTestCase(TestCase):
 
     # Test if the forgot password page exists and does open and initiate properly
     def test_forgot_password_page_url(self):
-        response = self.client.get("/forget_password/")
+        response = self.client.post('/forget_password/', data={
+            'email': 'namithspider@gmail.com'
+
+        })
+        self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, template_name='forgotpassword.html')
 
@@ -199,4 +205,5 @@ class ProfileTestCase(TestCase):
         response = self.client.post('/forget_password/', data={
             'email': self.email,
         })
+        self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(response.status_code, 200)
