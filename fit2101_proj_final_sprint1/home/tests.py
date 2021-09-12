@@ -1,7 +1,6 @@
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.models import User
 from django.test import TestCase
-from django.urls import reverse
 from django.test import Client
 
 from .models import Profile
@@ -71,6 +70,51 @@ class ProfileTestCase(TestCase):
         users = get_user_model().objects.all()
         self.assertEqual(users.count(), 1)
 
+    # Test to ensure no accounts are created if the 2 passwords provided during
+    # signup do not match, therefore is invalid
+    def test_signup_mismatch_passwords(self):
+        response = self.client.post('/register/', data={
+            'username': self.username,
+            'email': self.email,
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': 'mypass'
+        })
+        self.assertEqual(response.status_code, 302)
+
+        users = get_user_model().objects.all()
+        self.assertEqual(users.count(), 1)
+
+    # Test to ensure no accounts are created if the username provided has
+    # already been registered with an already registered account, therefore is invalid.
+    def test_signup_existing_username(self):
+        response = self.client.post('/register/', data={
+            'username': 'Namith',
+            'email': self.email,
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': self.password
+        })
+        self.assertEqual(response.status_code, 302)
+
+        users = get_user_model().objects.all()
+        self.assertEqual(users.count(), 1)
+
+    # Test to ensure no accounts are created if the email provided has already
+    # been registered with an already registered account, therefore is invalid.
+    def test_signup_existing_email(self):
+        response = self.client.post('/register/', data={
+            'username': self.username,
+            'email': 'namithspider@gmail.com',
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': self.password
+        })
+        self.assertEqual(response.status_code, 302)
+
+        users = get_user_model().objects.all()
+        self.assertEqual(users.count(), 1)
+
     # Test if the login page exists and does open and initiate properly
     def test_login_page_url(self):
         response = self.client.get("/login/")
@@ -105,3 +149,54 @@ class ProfileTestCase(TestCase):
 
         users = get_user_model().objects.all()
         self.assertEqual(users.count(), 1)
+
+    # Test if logout functionality works once a valid user has logged in
+    def test_logout(self):
+        c = Client()
+        logged_in = c.login(username='Namith', password='mypass')
+        self.assertTrue(logged_in)
+
+        response = self.client.post('/logout/')
+        self.assertEqual(response.status_code, 302)
+
+    # Test if a valid registered account does login successfully, through the login path from urls
+    def test_login_function_valid(self):
+        response = self.client.post('/login/', data={
+            'username': 'Namith',
+            'password': 'mypass',
+
+        })
+        self.assertEqual(response.status_code, 302)
+
+    # Test if an account with an unregistered and invalid username cannot
+    # login successfully, through the login path from urls
+    def test_login_function_invalid_username(self):
+        response = self.client.post('/login/', data={
+            'username': 'FailureUser',
+            'password': 'mypass',
+
+        })
+        self.assertEqual(response.status_code, 302)
+
+    # Test if an account with a registered valid username but using an
+    # invalid password cannot login successfully, through the login path from urls
+    def test_login_function_invalid_password(self):
+        response = self.client.post('/login/', data={
+            'username': 'Namith',
+            'password': 'FailurePass',
+
+        })
+        self.assertEqual(response.status_code, 302)
+
+    # Test if the forgot password page exists and does open and initiate properly
+    def test_forgot_password_page_url(self):
+        response = self.client.get("/forget_password/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, template_name='forgotpassword.html')
+
+    # Tests if the forgot password page accepts a Valid email
+    def test_forgot_password_valid(self):
+        response = self.client.post('/forget_password/', data={
+            'email': self.email,
+        })
+        self.assertEqual(response.status_code, 200)
