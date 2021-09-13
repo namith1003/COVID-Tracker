@@ -13,7 +13,7 @@ class ProfileTestCase(TestCase):
 
     # tests if a newly created profile is of rank admin
     def test_profile_is_admin(self):
-        self.assertNotEqual(self.profile.user.username, 'admin')
+        self.assertNotEqual(User.is_authenticated, 'admin')
 
     def test_created_profile_exists(self):
         self.assertTrue(authenticate(username='Namith', password='mypass'))
