@@ -14,7 +14,7 @@ from django.core.mail import send_mail
 def index(request):
     return render(request, 'index.html')
 
-
+#register function for sign in page
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -43,7 +43,7 @@ def register(request):
     else:
         return render(request, 'register.html')
 
-
+#function
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
