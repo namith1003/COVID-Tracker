@@ -1,0 +1,67 @@
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'add_widget.css' %}">
+        <link href="{% static 'js/bootstrap.min.js' %}" rel="stylesheet">
+        <link href="{% static 'css/password_reset.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </head>    
+
+
+
+
+<body>
+
+<div class="header">
+  <a href="#default" class="logo">Welcome,  {{user.username}}</a>
+  <div class="header-right">
+      <a class="btn btn-outline-primary" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+      <div class = "btn-outline-primary dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+      </div>  
+      <a class="btn btn-outline-primary" href="{% url 'reset_password' %}">Reset Password</a>
+      <a class="btn btn-outline-primary" href="logout">Logout</a>
+  </div>  
+</div>  
+
+
+ 
+
+
+
+
+<div class="row">
+  <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="600px"></iframe>
+</div>  
+<div class="row">
+    <div class="col-md-6">
+        <div class="demo-content"><iframe src="https://public.domo.com/cards/bWxVg" width="100%" height="500" marginheight="0" marginwidth="0" frameborder="0" style="background: #778899"></iframe></div>
+    </div>
+    <div class="col-md-6">    
+        <div class="demo-content bg-alt"><iframe src="https://public.domo.com/cards/2kO6J" width="110%" height="500" marginheight="0" marginwidth="0" frameborder="0"></iframe></div>
+        </div>
+    </div>
+
+    
+
+
+
+</body>    

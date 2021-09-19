@@ -39,6 +39,7 @@
                         <nav>
                             {% if user.is_superuser %}
                             <a class="btn btn-outline-primary" href="admin">View Admin controls</a>
+                            <a class="btn btn-outline-primary" href="/add_widget">View COVID 19 statistics</a>
                             <a class="btn btn-outline-primary" href="logout">Logout</a>
                             <a class="btn btn-outline-primary" href="{% url 'reset_password' %}">Reset Password</a>
                             {% elif user.is_authenticated %}

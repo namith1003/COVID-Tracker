@@ -79,11 +79,13 @@ def post(request, pk):
 
 
 def add_widget(request):
-    pass
+    return render(request,'add_widget.html')
 
 
 def forget_password(request):
         return render(request, 'forgotpassword.html')
+
+      
 
 # def password_reset_request(request):
 #     return render(request, 'registrations/reset_password.html', context={})
