@@ -1,5 +1,6 @@
 .btn-outline-primary{
   border: none;
+  background: #ddd;
 }
 .header{
     background: silver;
@@ -55,6 +56,7 @@ body {
 .header a:hover {
   background-color: #ddd;
   color: black;
+  
 }
 
 .header a.active {
@@ -64,8 +66,13 @@ body {
 
 .header-right {
   float: right;
-  /* border: none; */
 }
+
+.header-left > .btn-outline-primary > a:hover{
+  background-color:black;
+  background: #ddd;
+}
+
 
 @media screen and (max-width: 500px) {
   .header a {
