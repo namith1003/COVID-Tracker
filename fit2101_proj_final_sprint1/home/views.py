@@ -87,7 +87,7 @@ def forget_password(request):
 
       
 def userInfo(request):
-    users = Profile.objects.all()
+    users = User.objects.all()
     return render(request, 'userInfo.html', {'users':users})
 
 

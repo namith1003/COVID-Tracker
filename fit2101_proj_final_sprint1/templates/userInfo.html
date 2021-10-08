@@ -33,12 +33,13 @@
                             <th scope="col">Last Signed In</th>
                         </tr>
                     </thead>
-                    {% for user in users%}
-                        {%if not user.is_superuser%}
+                    {% for user in users %}
+                        {% if not user.is_superuser%}
                             <tbody>
                                     <tr>
                                         <td>{{user.id}}</td>
                                         <td>{{user.username}}</td>
+                                        <td>{{user.email}}</td>
                                         <td>20</td>
                                         <td>21/09/2021 18:00:00</td>
                                     </tr>
