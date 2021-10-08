@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      #'crispy_forms',
-    'home',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,22 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CRISPY_TEMPLATE_PACK = 'uni_form'
+
+#EMAIL
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'parsifal_app'
+# EMAIL_HOST_PASSWORD = 'ragemode101'
+# EMAIL_USE_TLS = True
+#DataFlair
+
+#SMTP CONFIG
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'fit2101demo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Fit2101#demo_#'
+#password:Fit2101#demo_#
+#username: fit2101demo@gmail.com

@@ -23,7 +23,3 @@ class Profile(models.Model):
 class Widget(models.Model):
     country=models.CharField(max_length=100)
 """
-
-
-class Page(object):
-    pass
