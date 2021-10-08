@@ -90,10 +90,6 @@ def userInfo(request):
     users = Profile.objects.all()
     return render(request, 'userInfo.html', {'users':users})
 
-# def studentinfo(request):
-#     users = User.objects.all()
-#     return render(request, 'user_info.html', {'users':users})
-
 
 # def password_reset_request(request):
 #     return render(request, 'registrations/reset_password.html', context={})
