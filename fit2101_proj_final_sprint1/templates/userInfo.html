@@ -26,36 +26,26 @@
                 <table class="table table-bordered table-dark table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">User ID</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
                             <th scope="col">Amount of Log In</th>
                             <th scope="col">Last Signed In</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>20</td>
-                            <td>21/09/2021 18:00:00</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>15</td>
-                            <td>21/09/2021 18:00:00</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>10</td>
-                            <td>21/09/2021 18:00:00</td>
-                        </tr>
-                    </tbody>
+                    {% for user in users%}
+                        {%if not user.is_superuser%}
+                            <tbody>
+                                    <tr>
+                                        <td>{{user.id}}</td>
+                                        <td>{{user.username}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>20</td>
+                                        <td>21/09/2021 18:00:00</td>
+                                    </tr>
+                            </tbody>
+                        {% endif %}
+                    {% endfor %}
                 </table>
             </div>
         </header>
