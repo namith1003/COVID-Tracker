@@ -7,14 +7,16 @@ from home import urls
 from django.urls import reverse
 from django.core.mail import send_mail
 
-#from django.http import HttpResponse
+
+# from django.http import HttpResponse
 
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
 
-#register function for sign in page
+
+# register function for sign in page
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -43,7 +45,8 @@ def register(request):
     else:
         return render(request, 'register.html')
 
-#function
+
+# function
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -79,17 +82,16 @@ def post(request, pk):
 
 
 def add_widget(request):
-    return render(request,'add_widget.html')
+    return render(request, 'add_widget.html')
 
 
 def forget_password(request):
-        return render(request, 'forgotpassword.html')
+    return render(request, 'forgotpassword.html')
 
-      
+
 def userInfo(request):
     users = User.objects.all()
-    return render(request, 'userInfo.html', {'users':users})
-
+    return render(request, 'userInfo.html', {'users': users})
 
 # def password_reset_request(request):
 #     return render(request, 'registrations/reset_password.html', context={})
