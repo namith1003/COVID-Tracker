@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Welcome Page</title>
     </head>
     <body>
@@ -26,15 +27,8 @@
                         {% if user.is_superuser %}
                             <h1>Welcome Admin {{user.username}}</h1>
                             <h2>You are logged into an admin account</h2>
-                            <!-- {% if data %}
-                            {% for i in data %}
-                            <h1>{{ i.user }}</h1>
-                            {% endfor %}
-                            {% endif %} -->
-                            <table><tr><td>CONTENT</td></tr></table>
                         {% else %}
                             <h1>Welcome {{user.username}}</h1>
-                        
                         {% endif %}
                         {% else %}
                         <h1>Welcome </h1>
@@ -46,6 +40,7 @@
                             {% if user.is_superuser %}
                             <a class="btn btn-outline-primary" href="admin">View Admin controls</a>
                             <a class="btn btn-outline-primary" href="/add_widget">View COVID 19 statistics</a>
+                            <a class="btn btn-outline-primary" href="/userInfo">User Info</a>
                             <a class="btn btn-outline-primary" href="logout">Logout</a>
                             <a class="btn btn-outline-primary" href="{% url 'reset_password' %}">Reset Password</a>
                             {% elif user.is_authenticated %}

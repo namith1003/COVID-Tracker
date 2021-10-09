@@ -12,14 +12,7 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
-    context={}
-    if User.is_superuser:
-        data = Profile.objects.all()
-        last_login=User.objects.values_list('last_login',flat= True)
-        context={'data':data, 'last_login':last_login}
-
-        print(last_login)
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
 
 #register function for sign in page
 def register(request):
@@ -93,6 +86,10 @@ def forget_password(request):
         return render(request, 'forgotpassword.html')
 
       
+def userInfo(request):
+    users = User.objects.all()
+    return render(request, 'userInfo.html', {'users':users})
+
 
 # def password_reset_request(request):
 #     return render(request, 'registrations/reset_password.html', context={})
