@@ -8,8 +8,9 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     tel = models.CharField(max_length=12)
-    counter = models.CharField(max_length=256)
+    counter = models.PositiveIntegerField(default=0)
 
+>>>>>>>>> Temporary merge branch 2
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
@@ -24,7 +25,3 @@ class Profile(models.Model):
 class Widget(models.Model):
     country=models.CharField(max_length=100)
 """
-
-
-class Page(object):
-    pass
