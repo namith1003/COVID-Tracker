@@ -2,11 +2,20 @@ body {
     margin: 0;
     padding: 0;
     color: #999;
-    /* background: #f5f5f5; */
     background: cadetblue;
-    /* background-color: #17a2b8; */
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+}
+
+h3{
+    font-size:45px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Luckiest Guy', cursive;  
+}
+
+p{
+    color: red;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #login .container #login-row #login-column #login-box {
@@ -25,12 +34,12 @@ body {
 }
 
 .container h3{
-    /* color: cadetblue; */
-    color: gray;
+    color: cadetblue;
+    color: black;
 }
 
 .form-group{
-    color: cadetblue;
+    color: black;
 
 }
 
@@ -38,5 +47,4 @@ body {
     /* background: #179b81; */
     background: cadetblue;
 }
-
 
