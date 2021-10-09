@@ -30,17 +30,19 @@
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
                             <th scope="col">Amount of Log In</th>
+                            <th scope="col">Tel</th>
                             <th scope="col">Last Signed In</th>
                         </tr>
                     </thead>
                     {% for user in users %}
-                        {% if not user.is_superuser%}
+                        {% if not user.is_superuser %}
                             <tbody>
                                     <tr>
                                         <td>{{user.id}}</td>
                                         <td>{{user.username}}</td>
                                         <td>{{user.email}}</td>
-                                        <td>20</td>
+                                        <td>{{user.profile.logins}}</td>
+                                        <td>{{user.profile.tel}}</td>
                                         <td>{{user.last_login}}</td>
                                     </tr>
                             </tbody>

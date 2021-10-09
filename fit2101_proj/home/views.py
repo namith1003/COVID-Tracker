@@ -6,7 +6,7 @@ from .models import Profile
 from home import urls
 from django.urls import reverse
 from django.core.mail import send_mail
-
+import datetime
 #from django.http import HttpResponse
 
 
@@ -88,6 +88,7 @@ def forget_password(request):
       
 def userInfo(request):
     users = User.objects.all()
+    print("testtest")
     return render(request, 'userInfo.html', {'users':users})
 
 
