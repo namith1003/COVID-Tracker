@@ -62,6 +62,8 @@
 		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
     </form>
 	<div class="text-center">Already have an account? <a href="/login">Login here</a>.</div>
+	<button href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-primary btn-block btn-lg">>Back</button>
+	<a class="btn btn-outline-primary" href="logout">Logout</a>
 </div>
 </body>
 </html>
