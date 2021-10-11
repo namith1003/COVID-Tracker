@@ -47,7 +47,7 @@
                                 <a href="/register" class="text-info">Register here</a>
                             </div>
                         </form>
-                        <a class="btn btn-outline-primary" href="{{request.META.HTTP_REFERER|escape}}">Back</a>
+                        <a class="btn btn-outline-primary" href="{% url 'home:index' %}">Back</a>
                     </div>
                 </div>
             </div>
