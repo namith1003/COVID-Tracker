@@ -6,13 +6,18 @@ from .models import Profile
 from home import urls
 from django.urls import reverse
 from django.core.mail import send_mail
-
-
+from dateutil import tz
+from datetime import datetime
+from pytz import timezone
 # from django.http import HttpResponse
 
 
 # Create your views here.
 def index(request):
+    # local_time = ""
+    # if request.user and request.user.is_superuser:
+    #     local_time = datetime.today(timezone('UTC'))
+    #     print("pass")
     return render(request, 'index.html')
 
 
@@ -55,7 +60,6 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            print('hi')
             return redirect('/')
         else:
             messages.info(request, 'Credentials are invalid')

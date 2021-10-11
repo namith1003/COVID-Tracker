@@ -207,3 +207,10 @@ class ProfileTestCase(TestCase):
         })
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(response.status_code, 200)
+
+    def test_user_Info(self):
+        response = self.client.post('/userInfo/', data={
+            'email': self.email,
+        })
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.status_code, 200)
