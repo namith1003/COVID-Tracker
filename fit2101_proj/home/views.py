@@ -6,7 +6,6 @@ from .models import Profile
 from home import urls
 from django.urls import reverse
 from django.core.mail import send_mail
-from dateutil import tz
 from datetime import datetime
 from pytz import timezone
 # from django.http import HttpResponse
