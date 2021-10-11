@@ -41,8 +41,8 @@
        
       
   <div class="header-right">
-      <a class="btn btn-outline-primary" href="{% url 'reset_password' %}">Reset Password</a>
-      <a class="btn btn-outline-primary" href="/login">Logout</a>
+      
+      <a class="btn btn-outline-primary" href="{{request.META.HTTP_REFERER|escape}}">Back to Homepage</a>
   </div>  
 </div>  
 

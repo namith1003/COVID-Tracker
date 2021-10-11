@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load tz %}
+    {% load static %}
     <head>
-        {% load static %}
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -30,8 +31,7 @@
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
                             <th scope="col">Amount of Log In</th>
-                            <th scope="col">Tel</th>
-                            <th scope="col">Last Signed In</th>
+                            <th scope="col">Last Sign In</th>
                         </tr>
                     </thead>
                     {% for user in users %}
@@ -42,13 +42,14 @@
                                         <td>{{user.username}}</td>
                                         <td>{{user.email}}</td>
                                         <td>{{user.profile.counter}}</td>
-                                        <td>{{user.last_login}}</td>
+                                        <td>{{user.last_login|timezone:"Asia/Kuala_Lumpur" }}</td>
                                     </tr>
                             </tbody>
                         {% endif %}
                     {% endfor %}
                 </table>
             </div>
+            <a href="{{request.META.HTTP_REFERER|escape}}">Back</a>
         </header>
     </body>
 </html>
