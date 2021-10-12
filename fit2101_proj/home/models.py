@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+from django.contrib.auth.signals import user_logged_in
+from django.utils import timezone
 
 # user account extended
 class Profile(models.Model):
@@ -19,8 +20,16 @@ class Profile(models.Model):
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
 
+    @receiver(user_logged_in)
+    def inc_logins(sender, user, request, **kwargs):
+        user.profile.counter += 1
+
 
 """
 class Widget(models.Model):
     country=models.CharField(max_length=100)
 """
+
+
+class Page(object):
+    pass
