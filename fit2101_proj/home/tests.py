@@ -207,3 +207,82 @@ class ProfileTestCase(TestCase):
         })
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(response.status_code, 200)
+
+    # Test if the user info page opens with all the users data without failing
+    def test_user_Info(self):
+        response = self.client.post('/userInfo/')
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.status_code, 200)
+
+    # adding to test if the widget page will open with no error
+    def test_add_widget(self):
+        response = self.client.post('/add_widget/')
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.status_code, 200)
+
+    # test if the logout functionality will work without causing errors when a request
+    # is made when a user is logged in
+    def test_logout_when_logged_in(self):
+        c = Client()
+        logged_in = c.login(username='Namith', password='mypass')
+        self.assertTrue(logged_in)
+        response = self.client.post('/logout/')
+        self.assertEqual(response.status_code, 302)
+
+    # test if an error is given if a logout request happens when no user is
+    # logged in
+    def test_logout_when_not_logged_in(self):
+        response = self.client.post('/logout/')
+        self.assertEqual(response.status_code, 302)
+
+    # test if the landing page will open with no errors shown
+    def test_index_page(self):
+        response = self.client.post('//')
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.status_code, 200)
+
+    # test if the counter for the number of times the user logs in is updated
+    def test_user_number_of_times_logged_in(self):
+        response = self.client.post('/register/', data={
+            'username': self.username,
+            'email': self.email,
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': self.password
+        })
+        number = get_user_model().objects.all()
+        # test if the newly registered user has logged in zero times
+        self.assertEqual(number[1].profile.counter, 0)
+        # log the test user in one time
+        c = Client()
+        logged_in = c.login(username='testuser', password='passwordForTesting')
+        self.assertTrue(logged_in)
+        # test if the user has now logged in one time
+        self.assertEqual(number[1].profile.counter, 0)
+
+    # test that when a new user registers admin can view their email as required
+    def test_user_email_is_obtainable(self):
+        response = self.client.post('/register/', data={
+            'username': self.username,
+            'email': self.email,
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': self.password
+        })
+        number = get_user_model().objects.all()
+        # test if the newly registered user has logged in zero times
+        self.assertEqual(number[1].email, 'testuser@email.com')
+
+    # test that when a new user registers admin can view their telephone
+    # number as hes/she requires
+    def test_user_tel_no_is_obtainable(self):
+        response = self.client.post('/register/', data={
+            'username': self.username,
+            'email': self.email,
+            'tel': self.telephone,
+            'password': self.password,
+            'password2': self.password
+        })
+        number = get_user_model().objects.all()
+        # test if the newly registered user has logged in zero times
+        self.assertEqual(number[1].profile.tel, '0123456789')
